@@ -1,0 +1,41 @@
+{
+    "waking_regex": {
+        "type": "list",
+        "description": "唤醒词正则表达式",
+        "hint": "匹配成功则触发唤醒，请谨慎。只支持正则表达式。例子：匹配到句子中带有 `雪酱` 的正则表达式：.*雪酱.*，即只要消息中带有 `雪酱` 时触发唤醒。正则表达式怎么用请去问大模型",
+        "obvious_hint": true
+    },
+    "whitelist": {
+        "type": "list",
+        "description": "唤醒词白名单",
+        "hint": "白名单内的群聊将不会触发唤醒。请注意！！为空则代表不启用此功能！！使用 /wgid 获取白名单 ID。需要先通过 AstrBot 内部的白名单。",
+        "obvious_hint": true
+    },
+    "continuous_awakening": {
+        "type": "object",
+        "description": "持续唤醒设置",
+        "hint": "当触发持续唤醒时，将会持续唤醒一段时间，期间内将无视苏所有唤醒词，包括系统的唤醒前缀。除了唤醒词，也可以用 /wbegin 指令进入持续状态，/wexit 退出状态。注意！！！即使不启用本功能，也可以使用前面两个指令进入和退出持续对话状态。触发持续唤醒的条件：1. 前面的 /wbegin 指令；2. 匹配到上面的持续唤醒正则表达式（非 AstrBot 的前缀）",
+        "obvious_hint": true,
+        "items": {
+            "enable": {
+                "type": "bool",
+                "description": "是否启用群聊持续唤醒",
+                "default": false,
+                "hint": "设置为True则启用，反之则不启用"
+            },
+            "waking_interval": {
+                "type": "int",
+                "description": "唤醒持续时长（秒）",
+                "default": 30,
+                "hint": "持续唤醒时长，单位为秒"
+            },
+            "reset_when_reply": {
+                "type": "bool",
+                "description": "回复消息时重置持续唤醒",
+                "default": false,
+                "hint": "回复消息时是否重置持续唤醒剩余时间，反之则不重置。请谨慎！特别是群聊里有其他 Bot 且开启了回复加 @。如果两个bot互相聊天无法解决，可以使用 /wexit 退出持续对话状态。",
+                "obvious_hint": true
+            }
+        }
+    }
+}
