@@ -8,7 +8,7 @@
     "whitelist": {
         "type": "list",
         "description": "唤醒词白名单",
-        "hint": "白名单内的群聊将不会触发唤醒。请注意！！为空则代表不启用此功能！！使用 /wgid 获取白名单 ID。需要先通过 AstrBot 内部的白名单。",
+        "hint": "白名单内的群聊将会触发唤醒。请注意！！为空则代表不启用此功能！！使用 /wgid 获取白名单 ID。需要先通过 AstrBot 内部的白名单。",
         "obvious_hint": true
     },
     "continuous_awakening": {
