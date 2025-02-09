@@ -1,6 +1,6 @@
 name: astrbot_plugin_wake_enhance
 desc: 让 AstrBot 支持正则匹配唤醒、唤醒后持续与机器人对话和交互。
 help: 无
-version: v1.0.0
+version: v1.0.1
 author: Soulter
 repo: https://github.com/Soulter/astrbot_plugin_wake_enhance
