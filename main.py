@@ -80,7 +80,7 @@ class MyPlugin(Star):
         if group_id not in self.waking_group_ids:
             # 不在持续唤醒状态
             return
-        if time.time() - self.waking_group_ids[group_id]["last_time"] > self.c_awake.get("waking_interval", 30):
+        if time.time() - self.waking_group_ids[group_id]["last_time"] > float(self.c_awake.get("waking_interval", 30)):
             self.waking_group_ids.pop(group_id)
             logger.info(f"由于超时，群聊 {group_id} 退出持续唤醒状态。")
             return
