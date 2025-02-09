@@ -45,6 +45,7 @@ class MyPlugin(Star):
         
         if group_id not in self.waking_group_ids:
             yield event.plain_result("拜拜~")
+            return
         self.waking_group_ids.pop(group_id)
         yield event.plain_result("拜拜~")
         
